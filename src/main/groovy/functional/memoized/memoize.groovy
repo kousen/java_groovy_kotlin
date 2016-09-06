@@ -1,4 +1,4 @@
-package functional
+package functional.memoized
 
 import groovy.transform.Memoized
 
