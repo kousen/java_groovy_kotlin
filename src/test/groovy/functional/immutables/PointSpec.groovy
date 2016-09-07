@@ -3,11 +3,11 @@ package functional.immutables
 import spock.lang.Specification
 
 class PointSpec extends Specification {
-    def 'tuple constructor'() {
+    def 'tuple constructor works'() {
         expect: new Point(3, 4)
     }
 
-    def "Translate"() {
+    def "can translate"() {
         given:
         Point start = new Point(1, 0)
         Point end = new Point(3, 3)
@@ -21,7 +21,7 @@ class PointSpec extends Specification {
 
     }
 
-    def "Rotate 90 deg"() {
+    def "can rotate 90 deg"() {
         given:
         Point p = new Point(1, 0)
 
@@ -33,7 +33,7 @@ class PointSpec extends Specification {
         p.y == 1
     }
 
-    def "Rotate 180 deg"() {
+    def "can rotate 180 deg"() {
         given:
         Point p = new Point(1, 0)
 
@@ -45,7 +45,7 @@ class PointSpec extends Specification {
         p.y.abs() < 1e-10
     }
 
-    def "Plus"() {
+    def "overloaded plus"() {
         given:
         Point p1 = new Point(1, 2)
         Point p2 = new Point(3, 4)
@@ -58,7 +58,7 @@ class PointSpec extends Specification {
         p.y == 6
     }
 
-    def "Minus"() {
+    def "overloaded minus"() {
         given:
         Point p1 = new Point(1, 2)
         Point p2 = new Point(3, 4)
