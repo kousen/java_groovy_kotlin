@@ -1,4 +1,4 @@
-package functional
+package lambdas
 
 def add3 = { it + 3 }
 def times2 = { it * 2 }

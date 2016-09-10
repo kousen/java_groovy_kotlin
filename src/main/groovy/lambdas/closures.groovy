@@ -1,4 +1,4 @@
-package functional
+package lambdas
 
 // Define a closure
 def add = { x,y -> x + y }

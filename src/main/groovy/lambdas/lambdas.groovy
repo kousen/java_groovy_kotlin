@@ -1,4 +1,4 @@
-package functional
+package lambdas
 
 import java.util.stream.DoubleStream
 

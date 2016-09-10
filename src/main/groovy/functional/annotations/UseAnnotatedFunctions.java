@@ -1,4 +1,4 @@
-package functional.memoized;
+package functional.annotations;
 
 import java.math.BigInteger;
 import java.util.stream.IntStream;

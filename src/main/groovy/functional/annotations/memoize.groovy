@@ -1,4 +1,4 @@
-package functional.memoized
+package functional.annotations
 
 import groovy.transform.Memoized
 

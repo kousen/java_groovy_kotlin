@@ -1,4 +1,4 @@
-package functional.memoized
+package functional.annotations
 
 import groovy.transform.Memoized
 import groovy.transform.TailRecursive
@@ -13,8 +13,7 @@ class AnnotatedFunctions {
 
     @Memoized
     BigInteger fact(BigInteger n) {
-        if (n < 2) 1
-        else n * fact(n - 1)
+        n < 2 ? 1 : n * fact(n - 1)
     }
 
     @Memoized

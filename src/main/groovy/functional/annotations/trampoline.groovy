@@ -1,4 +1,4 @@
-package functional
+package functional.annotations
 
 def fact
 fact = { n, total ->

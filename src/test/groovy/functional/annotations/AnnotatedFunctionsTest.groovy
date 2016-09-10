@@ -1,4 +1,4 @@
-package functional.memoized
+package functional.annotations
 
 import spock.lang.Specification
 
@@ -64,7 +64,7 @@ class AnnotatedFunctionsTest extends Specification {
     }
 
     // Example from GroovyDocs on @TailRecursive
-    def "sumUp with tail recursion"() {
+    def "sum up to a given number with tail recursion"() {
         expect:
         5050 == af.sumUp(100)
         500_000_500_000 == af.sumUp(1_000_000)

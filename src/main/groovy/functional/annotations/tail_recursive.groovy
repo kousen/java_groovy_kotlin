@@ -1,4 +1,4 @@
-package functional
+package functional.annotations
 
 import groovy.transform.*
 import static java.math.BigInteger.*
