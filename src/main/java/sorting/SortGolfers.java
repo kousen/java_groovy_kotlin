@@ -50,11 +50,22 @@ public class SortGolfers {
         });
     }
 
+    public void groupByScore() {
+        Map<Integer, List<Golfer>> map = golfers.stream()
+                .collect(Collectors.groupingBy(Golfer::getScore));
+
+        map.forEach((k,v) -> {
+            System.out.println(k);
+            v.forEach(System.out::println);
+        });
+    }
+
     public static void main(String[] args) {
         SortGolfers sg = new SortGolfers();
 //        sg.defaultSort();
 //        sg.sortByScoreThenLast();
-        sg.sortByScoreThenLastThenFirst();
+//        sg.sortByScoreThenLastThenFirst();
 //        sg.partitionByScore();
+        sg.groupByScore();
     }
 }

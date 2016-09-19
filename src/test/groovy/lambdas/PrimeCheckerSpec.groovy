@@ -1,6 +1,5 @@
 package lambdas
 
-import functional.PrimeCheckerGroovy
 import spock.lang.Specification
 import spock.lang.Unroll
 

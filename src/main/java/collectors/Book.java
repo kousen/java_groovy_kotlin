@@ -3,14 +3,12 @@ package collectors;
 public class Book {
     private int id;
     private String name;
-    private double price;
 
     public Book() {}
 
-    public Book(int id, String name, double price) {
+    public Book(int id, String name) {
         this.id = id;
         this.name = name;
-        this.price = price;
     }
 
     public int getId() {
@@ -29,20 +27,11 @@ public class Book {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", price=" + price +
                 '}';
     }
 }

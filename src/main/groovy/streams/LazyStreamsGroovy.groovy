@@ -1,4 +1,4 @@
-package functional
+package streams
 
 import java.util.stream.IntStream
 

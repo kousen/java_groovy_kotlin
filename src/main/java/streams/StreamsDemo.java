@@ -27,11 +27,6 @@ public class StreamsDemo {
 
     public int getTotalLength() {
         return strings.stream()
-                .collect(Collectors.summingInt(String::length));
-    }
-
-    public int getTotalLengthFromMapping() {
-        return strings.stream()
                 .mapToInt(String::length)
                 .sum();
     }

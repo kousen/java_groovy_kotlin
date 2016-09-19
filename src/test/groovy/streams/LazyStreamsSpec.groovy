@@ -1,6 +1,5 @@
 package streams
 
-import functional.LazyStreamsGroovy
 import spock.lang.Specification
 
 class LazyStreamsSpec extends Specification {
