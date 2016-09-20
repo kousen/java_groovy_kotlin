@@ -4,12 +4,12 @@ import java.util.stream.IntStream
 
 class LazyStreamsGroovy {
     int firstEvenDivBy3() {
-        (100..200).collect { it * 2 }
+        (100..<200).collect { it * 2 }
             .find { it % 3 == 0 }
     }
 
     int firstEvenDivBy3Verbose() {
-        (100..200).collect { println it; it * 2 }
+        (100..<200).collect { println it; it * 2 }
             .find { println it; it % 3 == 0 }
     }
 

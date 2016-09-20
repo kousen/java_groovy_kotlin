@@ -2,7 +2,7 @@ package functional.annotations
 
 import groovy.transform.Memoized
 
-def add = { x, y -> sleep 1000; x + y }.memoize()
+Closure add = { x, y -> sleep 1000; x + y }.memoize()
 
 println add(3, 4)      // takes 1 sec
 println add(3, 4)      // immediate

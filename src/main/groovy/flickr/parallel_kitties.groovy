@@ -36,7 +36,7 @@ def photos = json.photos.photo
 
 List images = photos.parallelStream()
     .map { p ->
-//        println "${Thread.currentThread().name}: ${p.title}"
+        println "${Thread.currentThread().name}: ${p.title}"
         String url = "http://farm${p.farm}.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg"
         url.toURL().bytes
     }

@@ -9,7 +9,7 @@ assert 36 == nums.collect { it * 2 }  // map
 List cities = ['Boston', 'New York', 'London', 'Hyderabad']
 
 assert cities.collect { String s -> s.toUpperCase() }
-              .sort()
+              .sort(false)
               .join(', ') ==
         'BOSTON, HYDERABAD, LONDON, NEW YORK'
 
