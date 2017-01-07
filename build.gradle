@@ -1,5 +1,4 @@
 apply plugin: 'groovy'
-apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
