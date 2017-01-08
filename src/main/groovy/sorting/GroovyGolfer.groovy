@@ -2,7 +2,7 @@ package sorting
 
 import groovy.transform.Sortable
 
-@Sortable(includes = ['score', 'last', 'first'])
+// Add the @Sortable annotation
 class GroovyGolfer {
     String first
     String last

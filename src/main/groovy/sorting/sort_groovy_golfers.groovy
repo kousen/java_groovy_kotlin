@@ -7,18 +7,14 @@ def golfers = [
         new GroovyGolfer(score: 68, last: 'Webb', first: 'Ty'),
         new GroovyGolfer(score: 70, last: 'Watson', first: 'Bubba')]
 
-List sorted = golfers.toSorted()
-
-assert sorted.first().score == 68
-assert sorted.first().last == 'Nicklaus'
-assert sorted.last().first == 'Tiger'
+// Sort the golfers
 
 // print the scoreboard
-sorted.each { println it }
-// sorted.forEach(System.out.&println)
+
+// Assert the score of the first() element is 68
+// Assert the last name of the first() element is 'Nicklaus'
+// Assert the first name of the last() element is 'Tiger'
 
 // print the last names in sorted order
-println sorted.last
 
 // sort by last name only
-println golfers.sort(false) { it.last }
