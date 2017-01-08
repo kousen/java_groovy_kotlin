@@ -5,21 +5,20 @@ class SortingDemoGroovy {
 
     // Default sort
     List defaultSort() {
-        strings.sort()
+        strings
     }
 
     // Length sort with 2-arg closure
     List lengthSortWithTwoArgClosure() {
-        strings.sort { s1, s2 -> s1.size() <=> s2.size() }
+        strings
     }
 
     List lengthSortWithOneArgClosure() {
-        strings.sort { it.size() }
+        strings
     }
 
+    // Optional
     List lengthSortThenAlphaSort() {
-        strings.sort { s1, s2 ->
-            s1.size() <=> s2.size() ?: s1 <=> s2
-        }
+        strings
     }
 }
