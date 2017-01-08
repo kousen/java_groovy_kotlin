@@ -43,22 +43,6 @@ public class SortingDemo {
         return sampleStrings;
     }
 
-    // Alternative length sort using Integer.compare
-    public List<String> lengthSortUsingCompare() {
-        Collections.sort(sampleStrings,
-                (s1, s2) -> Integer.compare(s1.length(), s2.length()));
-        return sampleStrings;
-    }
-
-    // Verbose syntax for length sort
-    public List<String> lengthSortVerbose() {
-        Collections.sort(sampleStrings,
-                (String s1, String s2) -> {
-                    return Integer.compare(s1.length(), s2.length());
-                });
-        return sampleStrings;
-    }
-
     // Sort by length with sorted
     public List<String> lengthSortUsingSorted() {
         return sampleStrings.stream()
@@ -73,16 +57,8 @@ public class SortingDemo {
                 .collect(toList());
     }
 
-    // Length sort, then alphabetical
-    public List<String> lengthSortThenAlphaSort() {
-        Collections.sort(sampleStrings,
-                Comparator.comparingInt(String::length)
-                        .thenComparing(Comparator.naturalOrder()));
-        return sampleStrings;
-    }
-
     // Sort by length then alpha using sorted
-    public List<String> lengthSortThenAlphaSortUsingSorted() {
+    public List<String> lengthSortThenAlphaSort() {
         return sampleStrings.stream()
                 .sorted(comparing(String::length)
                         .thenComparing(naturalOrder()))
@@ -90,7 +66,7 @@ public class SortingDemo {
     }
 
     // Sort by length then reverse alpha using sorted
-    public List<String> lengthSortThenReverseAlphaUsingSorted() {
+    public List<String> lengthSortThenReverseAlphaSort() {
         return sampleStrings.stream()
                 .sorted(comparing(String::length)
                         .thenComparing(reverseOrder()))
