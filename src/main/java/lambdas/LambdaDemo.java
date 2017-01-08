@@ -18,19 +18,17 @@ public class LambdaDemo {
             }
         });
 
-        // lambda expression for Consumer<String>
-        strings.forEach(s -> System.out.println(s));
+        // Use a simple expression lambda for Consumer<String> that prints each value
+        // strings.forEach( /* lambda */);
 
-        // Full block lambda
-        strings.forEach((String s) -> {
-            System.out.println(s);
-        });
+        // Use the full block form of the lambda
+        // strings.forEach( /* block lambda */ );
 
-        // Method reference
-        strings.forEach(System.out::println);
+        // Use a method reference to print each value
+        // strings.forEach( /* method reference for println */ );
 
-        // Assign to variable
-        Consumer<String> printer = System.out::println;
-        strings.forEach(printer);
+        // Assign lambda to variable
+        // Consumer<String> printer = // lambda or method reference
+        // strings.forEach(printer);
     }
 }

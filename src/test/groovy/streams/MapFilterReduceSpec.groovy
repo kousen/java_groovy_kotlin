@@ -19,7 +19,6 @@ class MapFilterReduceSpec extends Specification {
         expect:
         8 == demo.sumOddLengthStrings()
     }
-
     boolean isEven(int n) {
         n % 2 == 0
     }

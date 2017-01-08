@@ -15,27 +15,28 @@ public class StreamsDemo {
             "list", "of", "strings");
 
     public String joinStream() {
-        return strings.stream()
-                .collect(Collectors.joining(" "));
+        // return a string that joines all the elements of the strings list
+        // using a single space as a delimiter
+        return "";
     }
 
     public String joinUpperCase() {
-        return strings.stream()
-                .map(String::toUpperCase)
-                .collect(joining(" "));
+        // convert the strings to upper case and join them using a single space
+        return "";
     }
 
     public int getTotalLength() {
-        return strings.stream()
-                .mapToInt(String::length)
-                .sum();
+        // map the individual strings to ints and sum them
+        return 0;
     }
 
     public double sumFirstNBigDecimals(int num) {
-        return Stream.iterate(ONE, val -> val.add(ONE))
-                .limit(num)
-                .mapToDouble(BigDecimal::doubleValue)
-                .sum();
+        // use the iterate method on stream, starting from BigDecimal.ONE,
+        // adding BigDecimal.ONE each time
+        // use the limit method to produce only "num" values
+        // use mapToDouble to convert the BigDecimal instances to doubles
+        // use the sum method on DoubleStream to add them up
+        return 0;
     }
 
     public Double sumRandoms1(int num) {
