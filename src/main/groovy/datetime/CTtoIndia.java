@@ -22,5 +22,6 @@ public class CTtoIndia {
                 .forEach(zonedDateTime -> System.out.printf("  %s   %s%n",
                         zonedDateTime.toLocalTime().format(formatter),
                         zonedDateTime.withZoneSameInstant(india).toLocalTime()));
+
     }
 }
