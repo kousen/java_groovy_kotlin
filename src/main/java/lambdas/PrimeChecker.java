@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 
 public class PrimeChecker {
 
+    @SuppressWarnings("Convert2streamapi")
     public boolean isPrimeJava7(int x) {
         if (x < 2) throw new IllegalArgumentException("x must be >= 2");
         if (x == 2) return true;

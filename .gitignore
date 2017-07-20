@@ -1,6 +1,7 @@
 *.jar
 .gradle
 build/
+out/
 
 .gradletasknamecache
 *.json
