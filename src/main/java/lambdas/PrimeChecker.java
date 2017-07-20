@@ -9,7 +9,7 @@ public class PrimeChecker {
         if (x == 2) return true;
         int limit = (int) Math.sqrt(x) + 1;
 
-        for (int i = 2; i <= limit; i++ ) {
+        for (int i = 2; i <= limit; i++) {
             if (x % i == 0) {
                 return false;
             }

@@ -1,11 +1,11 @@
 package lambdas
 
 // Define a closure
-def add = { x,y -> x + y }
+def add = { x, y -> x + y }
 
-assert add.call(3,4) == 7
-assert add(3,4) == 7
-assert add('abc','def') == 'abcdef'
+assert add.call(3, 4) == 7
+assert add(3, 4) == 7
+assert add('abc', 'def') == 'abcdef'
 
 Date now = new Date()
 Date then = add(now, 3)

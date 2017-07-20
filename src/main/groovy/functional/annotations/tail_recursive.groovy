@@ -1,7 +1,8 @@
 package functional.annotations
 
-import groovy.transform.*
-import static java.math.BigInteger.*
+import groovy.transform.TailRecursive
+
+import static java.math.BigInteger.ONE
 
 @TailRecursive
 def fact(n, acc = ONE) {

@@ -6,8 +6,8 @@ Closure add = { x, y -> sleep 1000; x + y }.memoize()
 
 println add(3, 4)      // takes 1 sec
 println add(3, 4)      // immediate
-println add('a','b')   // takes 1 sec
-println add('a','b')   // immediate
+println add('a', 'b')   // takes 1 sec
+println add('a', 'b')   // immediate
 
 def fib = { n ->
     if (n < 2) 1

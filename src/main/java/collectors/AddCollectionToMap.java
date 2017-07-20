@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 public class AddCollectionToMap {
 
-    private static <K,V> void printMap(Map<K,V> map) {
-        map.forEach((k,v) -> System.out.printf("%s: %s%n", k, v));
+    private static <K, V> void printMap(Map<K, V> map) {
+        map.forEach((k, v) -> System.out.printf("%s: %s%n", k, v));
     }
 
     public static void main(String[] args) {

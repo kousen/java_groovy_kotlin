@@ -1,27 +1,29 @@
 package flickr
 
-import groovy.json.*
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
 import groovy.swing.SwingBuilder
 
-import java.awt.GridLayout
-import javax.swing.ImageIcon
+import javax.swing.*
 import javax.swing.WindowConstants as WC
+import java.awt.*
+import java.util.List
 import java.util.stream.Collectors
 
 String key = new File('flickr_key.txt').text
 String tag = 'kitties'
 
 String endPoint = 'https://api.flickr.com/services/rest?'
-def params = [method: 'flickr.photos.search',
-              api_key: key,
-              format: 'json',
-              tags: tag,
+def params = [method        : 'flickr.photos.search',
+              api_key       : key,
+              format        : 'json',
+              tags          : tag,
               nojsoncallback: 1,
-              media: 'photos',
-              per_page: 6]
+              media         : 'photos',
+              per_page      : 6]
 
 // Build URL and download JSON data
-def qs = params.collect { k,v -> "$k=$v" }.join('&')
+def qs = params.collect { k, v -> "$k=$v" }.join('&')
 String jsonTxt = "$endPoint$qs".toURL().text
 
 // write formatted JSON data to file
@@ -44,9 +46,9 @@ List images = photos.parallelStream()
 
 // build UI using Swing
 new SwingBuilder().edt {
-    frame(title:'Cat pictures', visible: true, pack: true,
-        defaultCloseOperation: WC.EXIT_ON_CLOSE, 
-        layout:new GridLayout(0, 2, 2, 2)) {
+    frame(title: 'Cat pictures', visible: true, pack: true,
+            defaultCloseOperation: WC.EXIT_ON_CLOSE,
+            layout: new GridLayout(0, 2, 2, 2)) {
         images.each {
             label(icon: new ImageIcon(it))
     }   }
