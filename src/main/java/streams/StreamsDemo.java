@@ -17,17 +17,22 @@ public class StreamsDemo {
     public String joinStream() {
         // return a string that joines all the elements of the strings list
         // using a single space as a delimiter
-        return "";
+        return strings.stream()
+                .collect(Collectors.joining(" "));
     }
 
     public String joinUpperCase() {
         // convert the strings to upper case and join them using a single space
-        return "";
+        return strings.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.joining(" "));
     }
 
     public int getTotalLength() {
         // map the individual strings to ints and sum them
-        return 0;
+        return strings.stream()
+                .mapToInt(String::length)
+                .sum();
     }
 
     public double sumFirstNBigDecimals(int num) {
@@ -36,7 +41,10 @@ public class StreamsDemo {
         // use the limit method to produce only "num" values
         // use mapToDouble to convert the BigDecimal instances to doubles
         // use the sum method on DoubleStream to add them up
-        return 0;
+        return Stream.iterate(BigDecimal.ONE, bd -> bd.add(BigDecimal.ONE))
+                .limit(num)
+                .mapToDouble(BigDecimal::doubleValue)
+                .sum();
     }
 
     public Double sumRandoms1(int num) {
