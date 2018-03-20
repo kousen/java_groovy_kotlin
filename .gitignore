@@ -6,3 +6,7 @@ out/
 .gradletasknamecache
 *.json
 
+.idea/
+*.iml
+*.ipr
+
