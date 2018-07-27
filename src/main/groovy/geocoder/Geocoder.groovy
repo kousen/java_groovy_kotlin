@@ -14,7 +14,7 @@ class Geocoder {
             URLEncoder.encode(it, 'UTF-8')
         }.join(',')
         String qs = "address=$encoded&key=$KEY"
-        def root = new JsonSlurper().parse("$BASE$qs")
+        def root = new JsonSlurper().parse("$BASE$qs".toURL())
         def loc = root.results[0].geometry.location
         location.latitude = loc.lat.toBigDecimal()
         location.longitude = loc.lng.toBigDecimal()
