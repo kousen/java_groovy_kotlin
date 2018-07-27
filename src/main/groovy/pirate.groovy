@@ -6,9 +6,9 @@ String.metaClass.pirate = { ->
     "$base$qs".toURL().text
 }
 
-println "Hello, World!".pirate()
-println "How are you today?".pirate()
-println "Please fill out your session evals".pirate()
+//println "Hello, World!".pirate()
+//println "How are you today?".pirate()
+//println "Please fill out your session evals".pirate()
 
 String.metaClass.pirate = { ->
     String base = 'http://api.funtranslations.com/translate/pirate.json?'
