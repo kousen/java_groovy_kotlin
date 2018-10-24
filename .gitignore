@@ -10,4 +10,6 @@ out/
 *.iml
 *.ipr
 
-api_key.txt
+pirate_key.txt
+yoda_key.txt
+

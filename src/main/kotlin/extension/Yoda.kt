@@ -1,13 +1,14 @@
+package extension
+
 import com.google.gson.Gson
 import java.io.File
 import java.net.URI
-import java.net.URL
 import java.net.URLEncoder
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 
-// JSON response to yoda translator
+// JSON response to extension.yoda translator
 // https://funtranslations.com/api/yoda
 //
 // {
@@ -15,7 +16,7 @@ import java.net.http.HttpResponse
 //        "total": 1
 //    },
 //    "contents": {
-//        "translation": "yoda",
+//        "translation": "extension.yoda",
 //        "text": "Master Obiwan has lost a planet.",
 //        "translated": "<translated text>"
 //    }
@@ -33,7 +34,7 @@ data class YodaContents(val translation: String,
 const val base = "https://api.funtranslations.com/translate/yoda.json?"
 
 fun String.yoda(): YodaResponse {
-    val key = File("src/main/resources/api_key.txt").readText()
+    val key = File("src/main/resources/yoda_key.txt").readText()
     val qs = "text=${URLEncoder.encode(this, "UTF-8")}"
 
     val client = HttpClient.newBuilder().build()
