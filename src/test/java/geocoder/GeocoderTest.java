@@ -1,9 +1,10 @@
 package geocoder;
 
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.closeTo;
-import static org.junit.Assert.assertThat;
 
 public class GeocoderTest {
     private Geocoder geocoder = new Geocoder();

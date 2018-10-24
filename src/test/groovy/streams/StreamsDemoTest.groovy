@@ -1,6 +1,6 @@
 package streams
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class StreamsDemoTest {
     StreamsDemo demo = new StreamsDemo()
