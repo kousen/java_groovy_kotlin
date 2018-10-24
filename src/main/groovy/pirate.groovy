@@ -1,16 +1,6 @@
 import groovy.json.JsonSlurper
 
 String.metaClass.pirate = { ->
-    String base = 'http://isithackday.com/arrpi.php?'
-    String qs = "text=${URLEncoder.encode(delegate, 'UTF-8')}"
-    "$base$qs".toURL().text
-}
-
-//println "Hello, World!".pirate()
-//println "How are you today?".pirate()
-//println "Please fill out your session evals".pirate()
-
-String.metaClass.pirate = { ->
     String base = 'http://api.funtranslations.com/translate/pirate.json?'
     String qs = "text=${URLEncoder.encode(delegate, 'UTF-8')}"
     String txt = "$base$qs".toURL().text
