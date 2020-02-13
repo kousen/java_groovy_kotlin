@@ -33,7 +33,7 @@ data class YodaContents(val translation: String,
 
 const val base = "https://api.funtranslations.com/translate/yoda.json?"
 
-fun String.yoda(): YodaResponse {
+fun String.yoda(): String {
     val key = File("src/main/resources/yoda_key.txt").readText()
     val qs = "text=${URLEncoder.encode(this, "UTF-8")}"
 
@@ -48,10 +48,10 @@ fun String.yoda(): YodaResponse {
     val response = client.send(request, HttpResponse.BodyHandlers.ofString())
 
     return Gson().fromJson(response.body(), YodaResponse::class.java)
+            .contents.translated
 }
 
 fun main() {
     File("src/main/resources/strings.txt").readLines()
-            .map { it.yoda().contents.translated }
-            .forEach { println(it) }
+            .forEach { println(it.yoda()) }
 }
