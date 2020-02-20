@@ -36,9 +36,9 @@ println JsonOutput.prettyPrint(jsonTxt)
 def json = new JsonSlurper().parseText(jsonTxt)
 def photos = json.photos.photo
 
-List images = photos.parallelStream()
+List<byte[]> images = photos.parallelStream()
     .map { p ->
-        // println "${Thread.currentThread().name}: ${p.title}"
+        println "${Thread.currentThread().name}: ${p.title}"
         String url = "http://farm${p.farm}.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg"
         url.toURL().bytes
     }
@@ -49,7 +49,8 @@ new SwingBuilder().edt {
     frame(title: 'Cat pictures', visible: true, pack: true,
             defaultCloseOperation: WC.EXIT_ON_CLOSE,
             layout: new GridLayout(0, 2, 2, 2)) {
-        images.each {
-            label(icon: new ImageIcon(it))
+        images.eachWithIndex { image, idx ->
+            label(text: "Cat $idx")
+            label(icon: new ImageIcon(image))
     }   }
 }

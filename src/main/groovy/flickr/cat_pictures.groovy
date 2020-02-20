@@ -40,8 +40,9 @@ new SwingBuilder().edt {
         photos.each { p ->
             String url =
                     "http://farm${p.farm}.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg"
+            println url
             String title = p.title
-            label(icon: new ImageIcon(url.toURL()), toolTipText: title)
+            label(icon: new ImageIcon(url.toURL(), p.title), toolTipText: title)
         }
     }
 }

@@ -52,6 +52,7 @@ fun String.yoda(): String {
 }
 
 fun main() {
-    File("src/main/resources/strings.txt").readLines()
-            .forEach { println(it.yoda()) }
+    File("src/main/resources/strings.txt").useLines { sequence ->
+        sequence.forEach { println(it.yoda()) }
+    }
 }
