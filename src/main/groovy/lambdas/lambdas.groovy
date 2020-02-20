@@ -7,7 +7,7 @@ import java.util.stream.DoubleStream
                   .filter { it % 3 == 0 }
                   .forEach { println it }
 
-println DoubleStream.generate(Math.&random)
+println DoubleStream.generate(Math::random)
                     .limit(1000)
                     .mapToInt { (int) (it * 100) }
                     .filter { it % 3 == 0 }
