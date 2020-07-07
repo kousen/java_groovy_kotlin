@@ -3,8 +3,8 @@ package io
 import java.io.File
 
 class Jumble {
-    private val wordMap = File("/usr/share/dict/words").useLines { line ->
-        line.filter { it.length == 5 || it.length == 6 }
+    private val wordMap = File("/usr/share/dict/words").useLines { lineSequence ->
+        lineSequence.filter { it.length == 5 || it.length == 6 }
                 .groupBy(this::word2key)
     }
 
