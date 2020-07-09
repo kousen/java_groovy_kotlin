@@ -2,21 +2,23 @@ package io
 
 import java.io.File
 
-class Jumble {
-    private val wordMap = File("/usr/share/dict/words").useLines { lineSequence ->
-        lineSequence.filter { it.length == 5 || it.length == 6 }
+class JumbleKotlin {
+    private val wordMap =
+            File("/usr/share/dict/words").useLines { lineSeq ->
+        lineSeq.filter { it.length == 5 || it.length == 6 }
                 .groupBy(this::word2key)
     }
 
     private fun word2key(word: String) =
             word.toList().sorted().joinToString("")
 
-    fun solve(clue: String): String = wordMap[word2key(clue)]?.get(0) ?: ""
+    fun solve(clue: String): String =
+            wordMap[word2key(clue)]?.get(0) ?: ""
 
     fun solveAll(vararg clues: String) =
             clues.map(this::solve)
 }
 
 fun main(args: Array<String>) {
-    println(Jumble().solveAll(*args))
+    println(JumbleKotlin().solveAll(*args))
 }
