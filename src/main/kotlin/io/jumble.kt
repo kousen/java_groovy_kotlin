@@ -12,8 +12,8 @@ class JumbleKotlin {
     private fun word2key(word: String) =
             word.toList().sorted().joinToString("")
 
-    fun solve(clue: String): String =
-            wordMap[word2key(clue)]?.get(0) ?: ""
+    fun solve(clue: String) =
+            wordMap[word2key(clue)] ?: listOf<String>()
 
     fun solveAll(vararg clues: String) =
             clues.map(this::solve)

@@ -1,7 +1,5 @@
 package io
 
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.`is`
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
@@ -14,9 +12,9 @@ class JumbleKotlinTest {
     @Test
     fun `check solver`() {
         assertAll(
-                { assertEquals("actual", jumbleKotlin.solve("cautla")) },
-                { assertEquals("goalie", jumbleKotlin.solve("agileo")) },
-                { assertEquals("mumble", jumbleKotlin.solve("mmlueb")) }
+                { assertEquals("actual", jumbleKotlin.solve("cautla")[0]) },
+                { assertEquals("goalie", jumbleKotlin.solve("agileo")[0]) },
+                { assertEquals("mumble", jumbleKotlin.solve("mmlueb")[0]) }
         )
     }
 
@@ -24,10 +22,11 @@ class JumbleKotlinTest {
     @CsvSource("cautla, actual",
         "agileo, goalie", "mmlueb, mumble")
     fun `unscramble words`(clue: String, answer: String) =
-            assertThat(jumbleKotlin.solve(clue), `is`(answer))
+            assertEquals(jumbleKotlin.solve(clue)[0], answer)
 
     @Test
     internal fun `check solveAll`() {
-        assertEquals(listOf("actual", "goalie", "mumble"), jumbleKotlin.solveAll("cautla", "agileo", "mmlueb"))
+        assertEquals(listOf("actual", "goalie", "mumble"),
+                jumbleKotlin.solveAll("cautla", "agileo", "mmlueb").map { it[0] })
     }
 }
