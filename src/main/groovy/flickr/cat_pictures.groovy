@@ -20,8 +20,8 @@ def params = [method        : 'flickr.photos.search',
               per_page      : 6]
 
 // Build URL and download JSON data
-def qs = params.collect { it }.join('&')
-String jsonTxt = "$endPoint$qs".toURL().text
+def queryString = params.collect { it }.join('&')
+String jsonTxt = "$endPoint$queryString".toURL().text
 
 // write formatted JSON data to file
 File f = new File('cats.json')
@@ -29,7 +29,7 @@ if (f) f.delete()
 f << JsonOutput.prettyPrint(jsonTxt)
 println JsonOutput.prettyPrint(jsonTxt)
 
-// parse JSON data
+// parse JSON data and extract photo elements
 def json = new JsonSlurper().parseText(jsonTxt)
 def photos = json.photos.photo
 
