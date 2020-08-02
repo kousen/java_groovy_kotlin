@@ -18,8 +18,8 @@ class JumbleSpec extends Specification {
 
         where:
         scrambled || word
-        'cautla'  || 'actual'
-        'agileo'  || 'goalie'
-        'mmlueb'  || 'mumble'
+        'cautla'  || ['actual']
+        'agileo'  || ['goalie']
+        'mmlueb'  || ['mumble']
     }
 }

@@ -8,11 +8,11 @@ class Jumble1 {
             new File('/usr/share/dict/words').readLines()
                     .findAll { it.size() == 5 || it.size() == 6 }
 
-    String solve(String clue) {
+    List<String> solve(String clue) {
         List<String> letters = clue.split('').toList()
         letters.permutations()
                 .collect { it.join('') }
-                .find { wordList.contains(it) }
+                .findAll { wordList.contains(it) }
     }
 }
 
@@ -23,9 +23,8 @@ class Jumble2 {
                 .findAll {it.size() == 5 || it.size() == 6 }
                 .groupBy { it.toList().sort().join('') }
 
-    String solve(String clue) {
-        def key = clue.toList().sort().join('')
-        wordMap[key].head()
+    List<String> solve(String clue) {
+        wordMap[clue.toList().sort().join('')]
     }
 }
 
