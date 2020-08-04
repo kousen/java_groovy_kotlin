@@ -17,15 +17,15 @@ public class LazyStreams {
 
     public int firstEvenDivBy3() {
         return IntStream.range(100, 200)
-                .map(x -> x * 2)
                 .filter(x -> x % 3 == 0)
+                .map(x -> x * 2)
                 .findFirst().orElse(0);
     }
 
     public int firstEvenDivBy3Verbose() {
         return IntStream.range(100, 200)
-                .map(this::multByTwo)
                 .filter(this::divByThree)
+                .map(this::multByTwo)
                 .findFirst().orElse(0);
     }
 }
