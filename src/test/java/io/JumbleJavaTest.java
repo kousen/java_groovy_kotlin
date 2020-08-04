@@ -15,16 +15,17 @@ class JumbleJavaTest {
     @Test
     void checkSolver() {
         assertAll(
-                () -> assertEquals("actual", jumble.solve("cautla")),
-                () -> assertEquals("goalie", jumble.solve("agileo"))
+                () -> assertEquals(List.of("actual"), jumble.solve("cautla")),
+                () -> assertEquals(List.of("goalie"), jumble.solve("agileo"))
         );
     }
 
     @Test
     void checkParallelSolve() {
-        List<String> strings = jumble.parallelSolve("zaaem", "rwdoc", "tlufan");
+        List<List<String>> strings = jumble.parallelSolve("zaaem", "rwdoc", "tlufan");
         System.out.println(strings);
-        assertThat(strings, containsInAnyOrder("amaze", "crowd", "flaunt"));
+        assertThat(strings, containsInAnyOrder(
+                List.of("amaze"), List.of("crowd"), List.of("flaunt", "unflat")));
         System.out.println(jumble.parallelSolve("snsaoe", "craigl", "ssevur",
                 "lonelp", "nlahed", "ceitkl"));
     }

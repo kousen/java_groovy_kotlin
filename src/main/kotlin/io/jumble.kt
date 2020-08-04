@@ -4,7 +4,7 @@ import java.io.File
 
 class JumbleKotlin {
     private val wordMap =
-            File("/usr/share/dict/words").useLines { lineSeq ->
+            File("src/main/resources/dict/words").useLines { lineSeq ->
         lineSeq.filter { it.length == 5 || it.length == 6 }
                 .groupBy(this::word2key)
     }

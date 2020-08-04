@@ -1,5 +1,7 @@
 package lambdas
 
+import java.time.LocalDate
+
 // Define a closure
 def add = { x, y -> x + y }
 
@@ -7,8 +9,8 @@ assert add.call(3, 4) == 7
 assert add(3, 4) == 7
 assert add('abc', 'def') == 'abcdef'
 
-Date now = new Date()
-Date then = add(now, 3)
+LocalDate now = LocalDate.now()
+LocalDate then = add(now, 3)  // same as now + 3
 assert then - now == 3
 
 // Define a closure with a variable number of untyped args

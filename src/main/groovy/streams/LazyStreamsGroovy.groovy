@@ -15,8 +15,8 @@ class LazyStreamsGroovy {
 
     int firstEvenDivBy3UsingStreams() {
         IntStream.rangeClosed(100, 200)
-            .map { println it; it * 2 }
             .filter { println it; it % 3 == 0 }
+            .map { println it; it * 2 }
             .findFirst().orElse(0)
     }
 }

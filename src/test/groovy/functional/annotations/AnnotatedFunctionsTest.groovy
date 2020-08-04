@@ -66,13 +66,13 @@ class AnnotatedFunctionsTest extends Specification {
     // Example from GroovyDocs on @TailRecursive
     def "sum up to a given number with tail recursion"() {
         expect:
-        5050 == af.sumUp(100)
+        5050L == af.sumUp(100)
         500_000_500_000 == af.sumUp(1_000_000)
     }
 
     // Example from GroovyDocs on @TailRecursive
     def 'sizeOfList'() {
         expect:
-        10_000 == af.sizeOfList(1..10000)
+        10_000L == af.sizeOfList(1..10000)
     }
 }

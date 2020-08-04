@@ -37,9 +37,9 @@ fun String.yoda(): String {
     val key = File("src/main/resources/yoda_key.txt").readText()
     val qs = "text=${URLEncoder.encode(this, "UTF-8")}"
 
-    val client = HttpClient.newBuilder().build()
+    val client: HttpClient = HttpClient.newBuilder().build()
 
-    val request = HttpRequest.newBuilder()
+    val request: HttpRequest = HttpRequest.newBuilder()
             .uri(URI.create("$base$qs"))
             .header("X-FunTranslations-Api-Secret", key)
             .GET()

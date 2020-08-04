@@ -14,7 +14,7 @@ String endPoint = 'https://api.flickr.com/services/rest?'
 def params = [method        : 'flickr.photos.search',
               api_key       : new File('flickr_key.txt').text,
               format        : 'json',
-              tags          : 'kitties',
+              tags          : 'cats',
               nojsoncallback: 1,
               media         : 'photos',
               per_page      : 6]
@@ -41,14 +41,15 @@ Image photo2image(p) {
 
 // download images
 List<Image> images = photos.stream()  // For fun, change to parallelStream
-    .map(this::photo2image)
-    .collect(Collectors.toList())
+        .map(this::photo2image)
+        .collect(Collectors.toList())
 
 // build UI using Swing
 new SwingBuilder().edt {
-    frame(title: 'Cat pictures', visible: true, pack: true,
+    frame(title: 'Cat pictures', visible: true,
+            pack: true,
+            layout: gridLayout(rows: 3, cols: 2),
             defaultCloseOperation: WC.EXIT_ON_CLOSE) {
-        gridLayout(rows: 3, cols: 2, hgap: 2, vgap: 2)
         images.each { image ->
             label(icon: imageIcon(image: image))
         }

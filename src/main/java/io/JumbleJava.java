@@ -15,7 +15,7 @@ public class JumbleJava {
 
     public JumbleJava() {
         try {
-            wordMap = Files.lines(Paths.get("/usr/share/dict/words"))
+            wordMap = Files.lines(Paths.get("src/main/resources/dict/words"))
                     .filter(word -> word.length() == 5 || word.length() == 6)
                     .collect(Collectors.groupingBy(this::word2key));
         } catch (IOException e) {
@@ -29,12 +29,12 @@ public class JumbleJava {
                 .collect(Collectors.joining());
     }
 
-    public String solve(String clue) {
+    public List<String> solve(String clue) {
         return wordMap.getOrDefault(word2key(clue),
-                Collections.singletonList("")).get(0);
+                Collections.singletonList(""));
     }
 
-    public List<String> parallelSolve(String... clues) {
+    public List<List<String>> parallelSolve(String... clues) {
         return Arrays.stream(clues)
                 .parallel()
                 .map(this::solve)
