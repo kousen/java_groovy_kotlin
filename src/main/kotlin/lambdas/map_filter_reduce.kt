@@ -28,7 +28,7 @@ val isEven: (Int) -> Boolean = { it % 2 == 0 }
 
 fun isOdd(i: Int) = i % 2 != 0
 
-fun main(args: Array<String>) {
+fun main() {
     mapFilterReduce()
 
     println(doubler(21))
@@ -60,8 +60,8 @@ fun main(args: Array<String>) {
             .average()
     println("Average age: $averageAge")
 
-    println(avengers.maxBy { it.last })
-    println(avengers.maxBy(Person::last))
+    println(avengers.maxByOrNull { it.last })
+    println(avengers.maxByOrNull(Person::last))
 
     println()
     avengers.groupBy { it.dob.month }.forEach { println(it) }
