@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
-@SuppressWarnings("Convert2MethodRef")
+//@SuppressWarnings("Convert2MethodRef")
 public class LambdaDemo {
     public static void main(String[] args) {
         List<String> strings = Arrays.asList("this", "is", "a",
@@ -14,7 +14,7 @@ public class LambdaDemo {
         strings.forEach(new Consumer<String>() {
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                System.out.println("The string is " + s);
             }
         });
 

@@ -11,7 +11,7 @@ import static java.math.BigDecimal.ONE;
 import static java.util.stream.Collectors.joining;
 
 public class StreamsDemo {
-    private List<String> strings = Arrays.asList("this", "is", "a",
+    private final List<String> strings = Arrays.asList("this", "is", "a",
             "list", "of", "strings");
 
     public String joinStream() {

@@ -3,7 +3,7 @@ package lambdas
 import java.time.LocalDate
 
 // Define a closure
-def add = { x, y -> x + y }
+Closure add = { x, y -> x + y }
 
 assert add.call(3, 4) == 7
 assert add(3, 4) == 7
