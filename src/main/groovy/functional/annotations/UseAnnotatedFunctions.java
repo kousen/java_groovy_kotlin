@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.stream.IntStream;
 
 public class UseAnnotatedFunctions {
-    private AnnotatedFunctions mf = new AnnotatedFunctions();
+    private final AnnotatedFunctions mf = new AnnotatedFunctions();
 
     public void timings() {
         IntStream.range(1, 100)

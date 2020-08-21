@@ -20,11 +20,15 @@ class Jumble1 {
 class Jumble2 {
     private Map<String, List<String>> wordMap =
             new File('src/main/resources/dict/words').readLines()
-                .findAll {it.size() == 5 || it.size() == 6 }
-                .groupBy { it.toList().sort().join('') }
+                    .findAll { it.size() == 5 || it.size() == 6 }
+                    .groupBy(this.&word2key)
+
+    private String word2key(String word) {
+        word.toList().sort().join('')
+    }
 
     List<String> solve(String clue) {
-        wordMap[clue.toList().sort().join('')]
+        wordMap[word2key(clue)]
     }
 }
 
