@@ -19,7 +19,7 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
     testImplementation 'org.junit.vintage:junit-vintage-engine:5.6.2'
-    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.4.0"
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.4.10"
 }
 
 test {
@@ -30,13 +30,13 @@ test {
 compileKotlin {
     kotlinOptions {
         freeCompilerArgs = ['-Xjsr305=strict']
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
 compileTestKotlin {
     kotlinOptions {
         freeCompilerArgs = ['-Xjsr305=strict']
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
