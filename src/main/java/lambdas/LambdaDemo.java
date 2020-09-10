@@ -19,10 +19,12 @@ public class LambdaDemo {
         });
 
         // Use a simple expression lambda for Consumer<String> that prints each value
-        // strings.forEach( /* lambda */);
+        strings.forEach(s -> System.out.println("The string is " + s));
 
         // Use the full block form of the lambda
-        // strings.forEach( /* block lambda */ );
+        strings.forEach(s -> {
+            System.out.println("The string is " + s);
+        });
 
         // Use a method reference to print each value
         // strings.forEach( /* method reference for println */ );
