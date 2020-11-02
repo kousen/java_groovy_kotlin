@@ -14,7 +14,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0"
 
-    testImplementation 'org.spockframework:spock-core:2.0-M3-groovy-3.0'
+    testImplementation 'org.spockframework:spock-core:2.0-M4-groovy-3.0'
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
