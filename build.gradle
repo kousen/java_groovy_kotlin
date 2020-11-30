@@ -12,7 +12,7 @@ dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.6'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt"
 
     testImplementation 'org.spockframework:spock-core:2.0-M4-groovy-3.0'
     testImplementation 'org.hamcrest:hamcrest:2.2'
