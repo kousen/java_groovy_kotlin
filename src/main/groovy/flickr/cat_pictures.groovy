@@ -40,7 +40,7 @@ Image photo2image(p) {
 }
 
 // download images
-List<Image> images = photos.parallelStream()  // For fun, change to parallelStream
+List<Image> images = photos.stream()  // For fun, change to parallelStream
         .map(this::photo2image)
         .collect(Collectors.toList())
 
