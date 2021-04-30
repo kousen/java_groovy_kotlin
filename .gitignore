@@ -13,3 +13,5 @@ out/
 pirate_key.txt
 yoda_key.txt
 
+.DS_Store
+

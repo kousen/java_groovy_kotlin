@@ -9,8 +9,7 @@ class Geocoder {
             'AIzaSyDw_d6dfxDEI7MAvqfGXEIsEMwjC1PWRno'
 
     void fillInLatLng(Location location) {
-        String encoded = [location.street, location.city,
-                          location.state].collect {
+        String encoded = [location.street, location.city, location.state].collect {
             URLEncoder.encode(it, 'UTF-8')
         }.join(',')
         String qs = "address=$encoded&key=$KEY"
