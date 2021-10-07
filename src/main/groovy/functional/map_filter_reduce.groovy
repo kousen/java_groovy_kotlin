@@ -16,3 +16,6 @@ total = nums
         .sum()
 
 assert total == 36
+
+total = 0
+nums.each { total += it }

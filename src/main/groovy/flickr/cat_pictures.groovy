@@ -11,13 +11,14 @@ import java.util.List
 import java.util.stream.Collectors
 
 String endPoint = 'https://api.flickr.com/services/rest?'
-def params = [method        : 'flickr.photos.search',
-              api_key       : new File('flickr_key.txt').text,
-              format        : 'json',
-              tags          : 'kitties',
-              nojsoncallback: 1,
-              media         : 'photos',
-              per_page      : 6]
+def params =
+        [method        : 'flickr.photos.search',
+         api_key       : new File('flickr_key.txt').text,
+         format        : 'json',
+         tags          : 'kitties',
+         nojsoncallback: 1,
+         media         : 'photos',
+         per_page      : 6]
 
 // Build URL and download JSON data
 def queryString = params.collect { it }.join('&')

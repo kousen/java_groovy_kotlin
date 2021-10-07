@@ -16,10 +16,10 @@ repositories {
 
 dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.9'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
     implementation 'com.google.code.gson:gson:2.8.8'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.5.30"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt'
+    implementation 'org.jetbrains.kotlin:kotlin-script-runtime:1.5.31'
 
     testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
     testImplementation 'org.hamcrest:hamcrest:2.2'
