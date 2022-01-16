@@ -6,7 +6,7 @@ plugins {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -14,18 +14,23 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:3.0.9'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
-    implementation 'com.google.code.gson:gson:2.8.9'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt'
-    implementation 'org.jetbrains.kotlin:kotlin-script-runtime:1.6.10'
+ext {
+    groovyVersion = '3.0.9'
+    kotlinVersion = '1.6.10'
+    junitVersion = '5.8.2'
+    spockVersion = '2.0-groovy-3.0'
+}
 
-    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
-    testImplementation 'org.hamcrest:hamcrest:2.2'
-    testImplementation 'org.hamcrest:hamcrest-library:2.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-    testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.2'
+dependencies {
+    implementation "org.codehaus.groovy:groovy-all:$groovyVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:$kotlinVersion"
+
+    testImplementation "org.spockframework:spock-core:$spockVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testImplementation "org.junit.vintage:junit-vintage-engine:$junitVersion"
 }
 
 test {
@@ -36,13 +41,13 @@ test {
 compileKotlin {
     kotlinOptions {
         freeCompilerArgs = ['-Xjsr305=strict']
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
 }
 
 compileTestKotlin {
     kotlinOptions {
         freeCompilerArgs = ['-Xjsr305=strict']
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
 }
