@@ -105,7 +105,7 @@ internal class AlgorithmsKtTest {
     }
 
     @Test
-    @Disabled("slow")
+    //@Disabled("slow")
     internal fun `factorial tests`() {
         assertAll(
                 { assertThat(factorial(0), `is`(BigInteger.ONE)) },
@@ -129,7 +129,7 @@ internal class AlgorithmsKtTest {
     }
 
     @Test
-    @Disabled("slow")
+    //@Disabled("slow")
     internal fun `folding factorial tests`() {
         assertAll(
                 { assertThat(factorialFold(0), `is`(BigInteger.ONE)) },
