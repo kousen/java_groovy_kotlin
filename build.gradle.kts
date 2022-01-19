@@ -16,10 +16,10 @@ repositories {
     mavenCentral()
 }
 
-val groovyVersion = "3.0.9"
-val kotlinVersion = "1.6.10"
-val junitVersion = "5.8.2"
-val spockVersion = "2.0-groovy-3.0"
+val groovyVersion by extra("3.0.9")
+val kotlinVersion by extra("1.6.10")
+val junitVersion by extra("5.8.2")
+val spockVersion by extra("2.0-groovy-3.0")
 
 dependencies {
     implementation("org.codehaus.groovy:groovy-all:$groovyVersion")
