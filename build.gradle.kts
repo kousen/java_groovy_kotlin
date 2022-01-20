@@ -22,7 +22,9 @@ val junitVersion by extra("5.8.2")
 val spockVersion by extra("2.0-groovy-3.0")
 
 dependencies {
-    implementation("org.codehaus.groovy:groovy-all:$groovyVersion")
+    implementation("org.codehaus.groovy:groovy:$groovyVersion")
+    implementation("org.codehaus.groovy:groovy-json:$groovyVersion")
+    implementation("org.codehaus.groovy:groovy-swing:$groovyVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
