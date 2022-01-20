@@ -49,7 +49,7 @@ List<Image> images = photos.parallelStream()  // For fun, change to parallelStre
 new SwingBuilder().edt {
     frame(title: 'Cat pictures', visible: true,
             pack: true,
-            layout: gridLayout(rows: 3, cols: 2),
+            layout: gridLayout(rows: 3, columns: 2),
             defaultCloseOperation: WC.EXIT_ON_CLOSE) {
         images.each { image ->
             label(icon: imageIcon(image: image))
