@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 package metaprogramming
 
 import groovy.json.JsonSlurper
