@@ -21,6 +21,8 @@ def params =
          per_page      : 6]
 
 // Build URL and download JSON data
+// NOTE: collect { it } on a map returns a list of key=value strings
+//   because the toString method on Map.Entry returns key=value
 def queryString = params.collect { it }.join('&')
 String jsonTxt = "$endPoint$queryString".toURL().text
 
@@ -34,16 +36,17 @@ println JsonOutput.prettyPrint(jsonTxt)
 def json = new JsonSlurper().parseText(jsonTxt)
 def photos = json.photos.photo
 
+// download images in parallel
+List<Image> images = photos.parallelStream()  // Groovy using Java streams
+        .map(this::photo2image)
+        .collect(Collectors.toList())
+
+// Convert a single photo JSON element into a java.awt.Image
 Image photo2image(p) {
     println "${Thread.currentThread().name}: ${p.title}"
     String url = "https://farm${p.farm}.staticflickr.com/${p.server}/${p.id}_${p.secret}.jpg"
     ImageIO.read(url.toURL())
 }
-
-// download images
-List<Image> images = photos.parallelStream()  // For fun, change to parallelStream
-        .map(this::photo2image)
-        .collect(Collectors.toList())
 
 // build UI using Swing
 new SwingBuilder().edt {

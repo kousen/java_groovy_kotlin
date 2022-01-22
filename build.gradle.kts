@@ -4,6 +4,7 @@ plugins {
     java
     groovy
     kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 java {
@@ -29,6 +30,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:$kotlinVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 
     testImplementation("org.spockframework:spock-core:$spockVersion")
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
