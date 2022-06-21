@@ -28,7 +28,7 @@ dependencies {
     implementation("org.codehaus.groovy:groovy-swing:$groovyVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     implementation("com.google.code.gson:gson:2.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3")
     implementation("org.jetbrains.kotlin:kotlin-script-runtime:$kotlinVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
