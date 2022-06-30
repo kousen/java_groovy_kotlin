@@ -20,11 +20,7 @@ class FlickrGateway {
     }
 
     @OptIn(ExperimentalSerializationApi::class)
-<<<<<<< HEAD
     val retrofit: Retrofit = Retrofit.Builder()
-=======
-    val retrofit = Retrofit.Builder()
->>>>>>> 11b7b7b0c7608019512f971f380865bb7e48d270
         .baseUrl("https://api.flickr.com/")
         .addConverterFactory(
             Json.asConverterFactory(MediaType.get("application/json"))
