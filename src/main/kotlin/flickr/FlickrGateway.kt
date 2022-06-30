@@ -2,6 +2,7 @@ package flickr
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.coroutines.*
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
@@ -18,7 +19,8 @@ class FlickrGateway {
         val key = File("flickr_key.txt").readText()
     }
 
-    val retrofit = Retrofit.Builder()
+    @OptIn(ExperimentalSerializationApi::class)
+    val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://api.flickr.com/")
         .addConverterFactory(
             Json.asConverterFactory(MediaType.get("application/json"))
