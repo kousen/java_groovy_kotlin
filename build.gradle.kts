@@ -38,7 +38,6 @@ dependencies {
     implementation(libs.kotlin.converter)
     implementation(libs.retrofit.core)
 
-
     testImplementation(libs.spock)
     testImplementation(libs.bundles.junit)
 }
