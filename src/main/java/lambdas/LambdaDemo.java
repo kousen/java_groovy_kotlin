@@ -7,8 +7,7 @@ import java.util.function.Consumer;
 //@SuppressWarnings("Convert2MethodRef")
 public class LambdaDemo {
     public static void main(String[] args) {
-        List<String> strings = Arrays.asList("this", "is", "a",
-                "list", "of", "strings");
+        List<String> strings = List.of("this", "is", "a", "list", "of", "strings");
 
         // Anonymous inner class impl of Consumer<String>
         strings.forEach(new Consumer<String>() {

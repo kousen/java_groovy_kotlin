@@ -50,8 +50,7 @@ Image photo2image(p) {
 
 // build UI using Swing
 new SwingBuilder().edt {
-    frame(title: 'Cat pictures', visible: true,
-            pack: true,
+    frame(title: 'Cat pictures', visible: true, pack: true,
             layout: gridLayout(rows: 3, columns: 2),
             defaultCloseOperation: WC.EXIT_ON_CLOSE) {
         images.each { image ->
