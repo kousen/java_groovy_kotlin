@@ -7,7 +7,7 @@ class AnnotatedFunctionsTest extends Specification {
 
     def "fibonacci"() {
         expect:
-        fibn == af.fib(n)
+        fibn == af.fib(n as BigInteger)
 
         where:
         n  || fibn
@@ -25,7 +25,7 @@ class AnnotatedFunctionsTest extends Specification {
 
     def "factorial with memoize"() {
         expect:
-        factn == af.fact(n)
+        factn == af.fact(n as BigInteger)
 
         where:
         n || factn
@@ -42,7 +42,7 @@ class AnnotatedFunctionsTest extends Specification {
 
     def "factorial with tail recursion"() {
         expect:
-        factn == af.factorial(n)
+        factn == af.factorial(n as BigInteger)
 
         where:
         n || factn

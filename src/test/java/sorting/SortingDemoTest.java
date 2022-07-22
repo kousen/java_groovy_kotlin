@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class SortingDemoTest {
-    private SortingDemo demo = new SortingDemo();
+    private final SortingDemo demo = new SortingDemo();
 
     private void checkAlphabetical(List<String> strings) {
         strings.stream()
@@ -30,18 +30,18 @@ public class SortingDemoTest {
     }
 
     @Test
-    public void testAlphaSort() throws Exception {
+    public void testAlphaSort() {
         checkAlphabetical(demo.alphaSort());
     }
 
     @Test
-    public void testAlphaSortUsingStreams() throws Exception {
+    public void testAlphaSortUsingStreams() {
         checkAlphabetical(demo.alphaSortUsingStreams());
     }
 
     @SuppressWarnings("ComparatorMethodParameterNotUsed")
     @Test
-    public void testLengthReverseSortWithComparator() throws Exception {
+    public void testLengthReverseSortWithComparator() {
         List<String> strings = demo.lengthReverseSortWithComparator().stream()
                 .sorted((s1, s2) -> -1)
                 .collect(Collectors.toList());
@@ -49,22 +49,22 @@ public class SortingDemoTest {
     }
 
     @Test
-    public void testLengthSortWithLambda() throws Exception {
+    public void testLengthSortWithLambda() {
         checkLength(demo.lengthSortWithLambda());
     }
 
     @Test
-    public void testLengthSortUsingSorted() throws Exception {
+    public void testLengthSortUsingSorted() {
         checkLength(demo.lengthSortUsingSorted());
     }
 
     @Test
-    public void testLengthSortUsingComparator() throws Exception {
+    public void testLengthSortUsingComparator() {
         checkLength(demo.lengthSortUsingComparator());
     }
 
     @Test
-    public void testLengthSortThenAlphaSort() throws Exception {
+    public void testLengthSortThenAlphaSort() {
         demo.lengthSortThenAlphaSort().stream()
                 .reduce((prev, curr) -> {
                     if (prev.length() != curr.length()) {
@@ -77,7 +77,7 @@ public class SortingDemoTest {
     }
 
     @Test
-    public void testLengthSortThenReverseAlphaSort() throws Exception {
+    public void testLengthSortThenReverseAlphaSort() {
         demo.lengthSortThenReverseAlphaSort().stream()
                 .reduce((prev, curr) -> {
                     if (prev.length() != curr.length()) {

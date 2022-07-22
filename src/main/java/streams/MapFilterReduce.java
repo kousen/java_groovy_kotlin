@@ -8,7 +8,7 @@ public class MapFilterReduce {
     public static final IntPredicate EVENS = n -> n % 2 == 0;
     public static final IntPredicate ODDS = n -> n % 2 != 0;
 
-    private List<String> strings = Arrays.asList("this", "is", "a",
+    private final List<String> strings = Arrays.asList("this", "is", "a",
             "list", "of", "strings");
 
     public int sumAllLengths() {

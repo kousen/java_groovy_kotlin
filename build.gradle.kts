@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.retrofit.core)
 
     testImplementation(libs.spock)
+    testImplementation(libs.assertj)
     testImplementation(libs.bundles.junit)
 }
 

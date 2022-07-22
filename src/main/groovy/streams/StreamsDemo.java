@@ -7,18 +7,13 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.math.BigDecimal.ONE;
-import static java.util.stream.Collectors.joining;
-
+@SuppressWarnings("unused")
 public class StreamsDemo {
     private final List<String> strings = Arrays.asList("this", "is", "a",
             "list", "of", "strings");
 
     public String joinStream() {
-        // return a string that joines all the elements of the strings list
-        // using a single space as a delimiter
-        return strings.stream()
-                .collect(Collectors.joining(" "));
+        return String.join(" ", strings);
     }
 
     public String joinUpperCase() {

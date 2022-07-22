@@ -21,9 +21,9 @@ class Jumble2 {
     private Map<String, List<String>> wordMap =
             new File('src/main/resources/dict/words').readLines()
                     .findAll { it.size() == 5 || it.size() == 6 }
-                    .groupBy(this.&word2key)
+                    .groupBy(this.&word2key) as Map<String, List<String>>
 
-    private String word2key(String word) {
+    private static String word2key(String word) {
         word.toList().sort().join('')
     }
 

@@ -13,7 +13,7 @@ class JumbleKotlin {
             word.toList().sorted().joinToString("")
 
     fun solve(clue: String) =
-            wordMap[word2key(clue)] ?: listOf<String>()
+            wordMap[word2key(clue)] ?: listOf()
 
     fun solveAll(vararg clues: String) =
             clues.map(this::solve)

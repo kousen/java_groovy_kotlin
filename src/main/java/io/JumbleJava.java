@@ -14,30 +14,29 @@ public class JumbleJava {
     private final Map<String, List<String>> wordMap;
 
     public JumbleJava() {
-        try {
-            wordMap = Files.lines(Paths.get("src/main/resources/dict/words"))
-                    .filter(word -> word.length() == 5 || word.length() == 6)
-                    .collect(Collectors.groupingBy(this::word2key));
+        try (var map =
+                     Files.lines(Paths.get("src/main/resources/dict/words"))) {
+            wordMap = map.filter(word -> word.length() == 5 || word.length() == 6)
+                           .collect(Collectors.groupingBy(this::word2key));
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
     }
 
-    private String word2key(String word) {
-        return Arrays.stream(word.split(""))
-                .sorted()
-                .collect(Collectors.joining());
+    public List<String> solve(String clue) {
+        return wordMap.getOrDefault(word2key(clue), Collections.singletonList(""));
     }
 
-    public List<String> solve(String clue) {
-        return wordMap.getOrDefault(word2key(clue),
-                Collections.singletonList(""));
+    private String word2key(String word) {
+        return Arrays.stream(word.split(""))
+                     .sorted()
+                     .collect(Collectors.joining());
     }
 
     public List<List<String>> parallelSolve(String... clues) {
         return Arrays.stream(clues)
-                .parallel()
-                .map(this::solve)
-                .collect(Collectors.toList());
+                     .parallel()
+                     .map(this::solve)
+                     .collect(Collectors.toList());
     }
 }

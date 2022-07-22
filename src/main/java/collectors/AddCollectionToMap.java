@@ -29,13 +29,13 @@ public class AddCollectionToMap {
 
         // Option 1: explicit identity lambda
         Map<Integer, Book> bookMap = books.stream()
-                .collect(Collectors.toMap(Book::getId, b -> b));
+                .collect(Collectors.toMap(Book::id, b -> b));
 
         printMap(bookMap);
 
         // Option 2: Function.identity method
         bookMap = books.stream()
-                .collect(Collectors.toMap(Book::getId, Function.identity()));
+                .collect(Collectors.toMap(Book::id, Function.identity()));
 
         printMap(bookMap);
 
@@ -43,9 +43,9 @@ public class AddCollectionToMap {
         //                  BiFunction<U,? super T,U> accumulator,
         //                  BinaryOperator<U> combiner)
         bookMap = books.stream()
-                .reduce(new HashMap<Integer, Book>(),  // init accumulator with map
+                .reduce(new HashMap<>(),  // init accumulator with map
                         (map, book) -> {               // add a book to the map
-                            map.put(book.getId(), book);
+                            map.put(book.id(), book);
                             return map;
                         },
                         (m1, m2) -> {                  // combine maps

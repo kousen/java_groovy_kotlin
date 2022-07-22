@@ -9,7 +9,7 @@ import static java.util.Comparator.*;
 import static java.util.stream.Collectors.toList;
 
 public class SortingDemo {
-    private List<String> sampleStrings =
+    private final List<String> sampleStrings =
             Arrays.asList("this", "is", "a", "list", "of", "strings");
 
     // Default sort from Java 7-
@@ -26,8 +26,9 @@ public class SortingDemo {
     }
 
     // Java 7- using Comparator with anonymous inner class
+    @SuppressWarnings("Convert2Lambda")
     public List<String> lengthReverseSortWithComparator() {
-        Collections.sort(sampleStrings, new Comparator<String>() {
+        sampleStrings.sort(new Comparator<>() {
             @Override
             public int compare(String s1, String s2) {
                 return s2.length() - s1.length();
@@ -37,13 +38,14 @@ public class SortingDemo {
     }
 
     // Using a lambda as a Comparator with a lambda
+    @SuppressWarnings("ComparatorCombinators")
     public List<String> lengthSortWithLambda() {
-        Collections.sort(sampleStrings,
-                (s1, s2) -> s1.length() - s2.length());
+        sampleStrings.sort((s1, s2) -> s1.length() - s2.length());
         return sampleStrings;
     }
 
     // Sort by length with sorted
+    @SuppressWarnings("ComparatorCombinators")
     public List<String> lengthSortUsingSorted() {
         return sampleStrings.stream()
                 .sorted((s1, s2) -> s1.length() - s2.length())

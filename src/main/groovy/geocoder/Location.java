@@ -1,5 +1,7 @@
 package geocoder;
 
+import java.util.Objects;
+
 public class Location {
     private String street;
     private String city;
@@ -64,11 +66,9 @@ public class Location {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Location)) return false;
+        if (!(o instanceof Location location)) return false;
 
-        Location location = (Location) o;
-
-        if (street != null ? !street.equals(location.street) : location.street != null) return false;
+        if (!Objects.equals(street, location.street)) return false;
         if (!city.equals(location.city)) return false;
         return state.equals(location.state);
 
