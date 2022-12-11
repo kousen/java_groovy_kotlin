@@ -29,9 +29,9 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.kotlin.coroutines)
     implementation(libs.kotlin.script.runtime)
-    implementation(libs.kotlin.serialization)
-    implementation(libs.kotlin.converter)
+    implementation(libs.kotlinx.converter)
     implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter)
 
     testImplementation(libs.spock)
     testImplementation(libs.assertj)

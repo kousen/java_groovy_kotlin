@@ -1,30 +1,30 @@
 [versions]
 assertj = "3.23.1"
-groovy = "4.0.5"
-gson = "2.9.1"
 junit = "5.9.1"
-kotlin = "1.7.20"
-kotlin-coroutines = "1.6.4"
-kotlin-serialization = "1.4.0"
-kotlin-serialization-converter = "0.8.0"
+kotlin = "1.8.0-RC"
+kotlinx-coroutines = "1.6.4"
+kotlinx-serialization = "1.4.1"
+groovy = "4.0.6"
+gson = "2.10"
+spock = "2.4-M1-groovy-4.0"
 retrofit = "2.9.0"
-spock = "2.3-groovy-4.0"
+retrofit-converter = "0.8.0"
 
 [libraries]
 assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
+kotlin-script-runtime = "org.jetbrains.kotlin:kotlin-script-runtime:1.7.0"
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-converter = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 groovy = { module = "org.apache.groovy:groovy", version.ref = "groovy" }
 groovy-json = { module = "org.apache.groovy:groovy-json", version.ref = "groovy" }
 groovy-swing = { module = "org.apache.groovy:groovy-swing", version.ref = "groovy" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
-junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
-kotlin-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "kotlin-serialization-converter" }
-kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
-kotlin-script-runtime = "org.jetbrains.kotlin:kotlin-script-runtime:1.7.0"
-kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-serialization" }
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 spock = { module = "org.spockframework:spock-core", version.ref = "spock" }
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-converter" }
 
 [bundles]
 junit = [
@@ -35,5 +35,5 @@ junit = [
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-version-catalog-update = "nl.littlerobots.version-catalog-update:0.6.1"
-versions = "com.github.ben-manes.versions:0.42.0"
+version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"
+versions = "com.github.ben-manes.versions:0.44.0"

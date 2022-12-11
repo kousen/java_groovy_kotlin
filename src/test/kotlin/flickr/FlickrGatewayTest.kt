@@ -7,7 +7,7 @@ class FlickrGatewayTest {
     private val gateway = FlickrGateway()
 
     @Test // @Disabled
-    fun `get kittles from Flickr`() {
+    fun `get kitties from Flickr`() {
         runBlocking {
             val flickrResult = gateway.retrofitService.getFlickrResult("kitties")
             println(flickrResult)

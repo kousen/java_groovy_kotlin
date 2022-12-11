@@ -54,11 +54,11 @@ interface FlickrService {
     suspend fun getFlickrResult(
         @Query("tags") tags: String,
         @Query("method") method: String = "flickr.photos.search",
-        @Query("api_key") api_key: String = FlickrGateway.key,
+        @Query("api_key") apiKey: String = FlickrGateway.key,
         @Query("format") format: String = "json",
         @Query("nojsoncallback") nojsoncallback: Int = 1,
         @Query("media") media: String = "photos",
-        @Query("per_page") per_page: Int = 6
+        @Query("per_page") perPage: Int = 6
     ): FlickrResult
 }
 
