@@ -1,13 +1,14 @@
 [versions]
 assertj = "3.23.1"
 junit = "5.9.1"
-kotlin = "1.8.0-RC"
+kotlin = "1.8.0"
 kotlinx-coroutines = "1.6.4"
 kotlinx-serialization = "1.4.1"
 groovy = "4.0.6"
 gson = "2.10"
 spock = "2.4-M1-groovy-4.0"
 retrofit = "2.9.0"
+retrofit-json = "1.2.2"
 retrofit-converter = "0.8.0"
 
 [libraries]
@@ -24,6 +25,8 @@ groovy-swing = { module = "org.apache.groovy:groovy-swing", version.ref = "groov
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 spock = { module = "org.spockframework:spock-core", version.ref = "spock" }
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+retrofit-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "retrofit-json" }
 retrofit-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-converter" }
 
 [bundles]

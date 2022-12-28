@@ -1,0 +1,12 @@
+# Version catalog updates generated at 2022-12-28T16:18:46.295766
+#
+# Contents of this file will be applied to libs.versions.toml when running versionCatalogApplyUpdates.
+#
+# Comments will not be applied to the version catalog when updating.
+# To prevent a version upgrade, comment out the entry or remove it.
+#
+[plugins]
+# From version 1.8.0-RC --> 1.8.0
+kotlin-jvm = "org.jetbrains.kotlin.jvm:1.8.0"
+# From version 1.8.0-RC --> 1.8.0
+kotlin-serialization = "org.jetbrains.kotlin.plugin.serialization:1.8.0"
