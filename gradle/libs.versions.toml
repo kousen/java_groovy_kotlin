@@ -39,4 +39,4 @@ junit = [
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"
-versions = "com.github.ben-manes.versions:0.44.0"
+versions = "com.github.ben-manes.versions:0.46.0"
