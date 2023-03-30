@@ -1,7 +1,7 @@
 [versions]
 assertj = "3.24.2"
 junit = "5.9.2"
-kotlin = "1.8.10"
+kotlin = "1.8.20"
 kotlinx-coroutines = "1.6.4"
 kotlinx-serialization = "1.5.0"
 groovy = "4.0.10"
@@ -15,7 +15,7 @@ retrofit-converter = "0.8.0"
 assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
-kotlin-script-runtime = "org.jetbrains.kotlin:kotlin-script-runtime:1.7.0"
+kotlin-script-runtime = "org.jetbrains.kotlin:kotlin-script-runtime:1.8.10"
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-converter = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
