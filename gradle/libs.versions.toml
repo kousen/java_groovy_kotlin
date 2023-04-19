@@ -9,7 +9,7 @@ gson = "2.10.1"
 spock = "2.4-M1-groovy-4.0"
 retrofit = "2.9.0"
 retrofit-json = "1.2.2"
-retrofit-converter = "0.8.0"
+retrofit-converter = "1.0.0"
 
 [libraries]
 assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
