@@ -1,7 +1,7 @@
 [versions]
 assertj = "3.24.2"
 junit = "5.10.1"
-kotlin = "1.9.10"
+kotlin = "1.9.21"
 kotlinx-coroutines = "1.7.3"
 kotlinx-serialization = "1.6.1"
 groovy = "4.0.15"
