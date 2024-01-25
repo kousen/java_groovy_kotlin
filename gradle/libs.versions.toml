@@ -1,5 +1,5 @@
 [versions]
-assertj = "3.25.1"
+assertj = "3.25.2"
 junit = "5.10.1"
 kotlin = "1.9.22"
 kotlinx-coroutines = "1.7.3"
