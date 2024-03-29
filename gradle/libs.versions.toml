@@ -7,7 +7,7 @@ kotlinx-serialization = "1.6.3"
 groovy = "4.0.20"
 gson = "2.10.1"
 spock = "2.4-M4-groovy-4.0"
-retrofit = "2.10.0"
+retrofit = "2.11.0"
 retrofit-json = "1.6.3"
 retrofit-converter = "1.0.0"
 
