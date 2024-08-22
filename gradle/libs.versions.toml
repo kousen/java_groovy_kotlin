@@ -15,7 +15,7 @@ retrofit-converter = "1.0.0"
 assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
-kotlin-script-runtime = "org.jetbrains.kotlin:kotlin-script-runtime:1.9.24"
+kotlin-script-runtime = "org.jetbrains.kotlin:kotlin-script-runtime:2.0.20"
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-converter = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
